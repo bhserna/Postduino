@@ -1,0 +1,23 @@
+<h1>Posts</h1>
+
+<% @posts.each do |post| %>
+  <%= div_for post do %>
+    <h2><%= post.name %></h2>
+    <p><%= post.text %></p>
+
+    <div class="post-comments">
+    </div>
+  <% end %>
+
+  <%= javascript_tag do %>
+    jQuery(function(){
+      new Commentator({
+        el: $("#post_<%= post.id %> .post-comments"),
+        url: "<%= post_comments_path(post) %>",
+        comments: <%= post.comments.to_json.html_safe %>,
+        comment_template: JST["comments/comment"],
+        reply_template: JST["comments/reply"]
+      });
+    });
+  <% end %>
+<% end %>
