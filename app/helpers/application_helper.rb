@@ -5,10 +5,10 @@ module ApplicationHelper
     message = send(message_method)
 
     if message
-      content_tag :div, class: options[:class] do
+      content_tag :div, class: "alert #{ options[:class] }" do
         html << button
         html << message
-        html
+        html.html_safe
       end
     end
   end

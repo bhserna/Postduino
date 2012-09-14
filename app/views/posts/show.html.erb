@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h1><%= link_to @post.name, @post %></h1>
+</div>
+<p><%= @post.text %></p>
+
+<div class="post-comments">
+  <h2>Comments</h2>
+</div>
+
+<%= javascript_tag do %>
+  jQuery(function(){
+    new Commentator({
+      el: $(".post-comments"),
+      url: "<%= post_comments_path(@post) %>",
+      comments: <%= @post.comments_json(self).html_safe %>,
+      comment_template: JST["comments/comment"],
+      comments_form_template: JST["comments/comments_form"],
+      reply_template: JST["comments/reply"]
+    });
+  });
+<% end %>

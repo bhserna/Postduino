@@ -2,7 +2,7 @@
   @extend .well;
 }
 
-button {
+button, input[type="submit"] {
   @extend .btn;
 }
 

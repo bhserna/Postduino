@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 gem 'devise'
 gem 'eco'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails'

@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   attr_accessible :name, :text
 
   def self.all_for_presentation
-    all.map(&:for_presentation)
+    order("created_at DESC").map(&:for_presentation)
   end
 
   def for_presentation
