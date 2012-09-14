@@ -11,6 +11,7 @@
       this.el = args.el;
       this.comment = args.comment;
       this.replies = this.comment.replies || [];
+      this.reply_link_name = args.reply_link_name;
       this.reply_template = args.reply_template;
       this.replies_form_template = args.replies_form_template;
       this.url = this.comment.replies_url;
@@ -25,7 +26,7 @@
     }
 
     Replies.prototype.add_reply_link = function() {
-      this.reply_link = $("<a data-link='reply' href='#'>Comentar</a>");
+      this.reply_link = $("<a data-link='reply' href='#'>" + this.reply_link_name + "</a>");
       return this.el.append(this.reply_link);
     };
 

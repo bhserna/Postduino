@@ -1,0 +1,20 @@
+.comment, .reply {
+  @extend .well;
+}
+
+button {
+  @extend .btn;
+}
+
+.reply {
+  background: white;
+}
+
+.comments_form textarea {
+  width: 600px;
+  height: 60px;
+}
+
+#replies textarea {
+  width: 600px;
+}

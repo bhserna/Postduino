@@ -10,6 +10,7 @@
       this.url = args.url;
       this.poster = args.poster || new Commentator.Poster;
       this.comments = args.comments || this.fetch_comments();
+      this.reply_link_name = args.reply_link_name || "Comment";
       this.set_display_form(args);
       this.set_templates(args);
       this.el.delegate(".comments_form", "submit", this.add_comment);
@@ -154,6 +155,7 @@
         el: this.replies_el(),
         comment: this.comment,
         reply_template: this.app.reply_template,
+        reply_link_name: this.app.reply_link_name,
         replies_form_template: this.app.replies_form_template,
         display_form: this.app.display_form
       });

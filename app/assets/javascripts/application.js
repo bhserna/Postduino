@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.textarea-expander
+//= require bootstrap
 //= require_tree ../templates
 //= require commentator_templates
 //= require commentator

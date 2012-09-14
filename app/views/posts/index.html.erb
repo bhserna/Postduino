@@ -1,8 +1,8 @@
-<h1>Posts</h1>
-
 <% @posts.each do |post| %>
   <%= div_for post do %>
-    <h2><%= post.name %></h2>
+    <div class="page-header">
+      <h2><%= post.name %></h2>
+    </div>
     <p><%= post.text %></p>
 
     <div class="post-comments">
@@ -16,6 +16,7 @@
         url: "<%= post_comments_path(post) %>",
         comments: <%= post.comments_json(self).html_safe %>,
         comment_template: JST["comments/comment"],
+        comments_form_template: JST["comments/comments_form"],
         reply_template: JST["comments/reply"]
       });
     });

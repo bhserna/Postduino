@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Postduino</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -7,10 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to "Postduino", root_path, class: "brand" %>
+      </div>
+    </div>
+  </div>
+  <div id="main_container" class="container">
+    <%= write_flash :alert,  class: "alert-error"   %>
+    <%= write_flash :notice, class: "alert-succes" %>
 
-  <%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>
