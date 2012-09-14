@@ -6,6 +6,10 @@ Postduino::Application.routes.draw do
   resources :posts do
     resources :comments
   end
+
+  resources :comments do
+    post :reply, on: :member
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

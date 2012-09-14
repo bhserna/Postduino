@@ -1,2 +1,4 @@
 <strong>Comentario <%= @id %></strong>
 <p><%= @message %></p>
+<div id="replies">
+</div>

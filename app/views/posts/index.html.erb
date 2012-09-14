@@ -14,7 +14,7 @@
       new Commentator({
         el: $("#post_<%= post.id %> .post-comments"),
         url: "<%= post_comments_path(post) %>",
-        comments: <%= post.comments.to_json.html_safe %>,
+        comments: <%= post.comments_json(self).html_safe %>,
         comment_template: JST["comments/comment"],
         reply_template: JST["comments/reply"]
       });

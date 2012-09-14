@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(message: params[:message])
     @comment.author = current_user
     @comment.save
-    render json: @comment
+    render json: @comment.for_presentation.to_json(view_context)
   end
 
   def reply
