@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create params[:post]
+    @post = current_user.posts.create params[:post]
     redirect_to posts_path, notice: "The post have been successfully created"
   end
 end

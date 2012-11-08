@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'eco'
 gem 'simple_form'
+gem 'commentator', github: "bhserna/Commentator"
 
 group :development, :test do
   gem 'rspec-rails'
